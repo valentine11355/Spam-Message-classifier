@@ -30,7 +30,7 @@ df['message'] = df['message'].apply(clean_text)
 X = df['message']
 y = df['label']
 
-# TF-IDF (IMPORTANT SETTINGS)
+# TF-IDF
 vectorizer = TfidfVectorizer(
     max_features=10000,
     ngram_range=(1,2),
@@ -45,7 +45,7 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42
 )
 
-# Model (BEST for text)
+# Model 
 model = LinearSVC()
 model.fit(X_train, y_train)
 
